@@ -28,14 +28,27 @@ CBC uses initialisation vectors (iv) aka nonce, which should be randomly chosen.
 
 Webcryptobox generates ciphertexts which are composed of the iv plus the encrypted content. This means there is no separation of the nonce and the ciphertext, so you can easily distribute the encrypted messages in a single file.
 
+```
+<16 bits iv><encrypted message bits>
+```
+
 Ciphertext is Base64 encoded.
 
 ### Password Derivation
 For scenarios where you'd like to authenticate with a key pair against a webservice, Webcryptobox provides a password key derivation. Because we use a curve which provides enough derived material, we can generate both an AES key (256 bits long) plus a password, which can be maximal 256 bits long (in fact it could be a little longer, most of the time 264 bits, but we clip at 256 for simplicity).
 That means if an attacer would gain the password, the AES key would not be leaket.
 
+```
+<256 bits AES key><password bits>
+```
+
+
 ### Key Exchange
 Webcryptobox uses the Privacy Enhanced Mail (PEM) file format for key exchange. You can exchange public keys, private keys and encrypted private keys. Private keys can be exchanged between peers by using a derived passphrase, which is a 256 bit hex representation of derived bits. That passphrase is used as an input for a Password-Based Key Derivation Function 2 (PBKDF2) with 64000 iterations and SHA-256 hashing.
+
+```
+<256 derived bits, hex encoded>
+```
 
 
 ## API
