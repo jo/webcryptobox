@@ -16,6 +16,8 @@ WebCrypto compatible encryption libraries and CLIs.
 ## Architecture
 Webcryptobox provides opinionated cipher selection and a few abstractions so you don't have to worry about too much details. It is heavily inspired by NaCL, but is focused on [WebCrypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) and [OpenSSL](https://www.openssl.org/) compatibility. That means you can implement crypto systems for the web which are also easily usable from within other systems.
 
+For understanding the way Webcryptobox works, best look at the [Webcryptobox Bash](https://github.com/jo/webcryptobox-sh) implementation. It basically wraps calls to `openssl` and massages data on its way in and out with `xxd`.
+
 ### Cipher
 We use Elliptic-curve Diffie–Hellman (ECDH) key agreement with curve P-521 aka secp521r1 or ansip521r1. Symmetric encryption is done with Advanced Encryption Standard (AES) with a key length of 256 bits in Cipher Block Chaining Mode (CBC).
 
@@ -32,6 +34,7 @@ That means if an attacer would gain the password, the AES key would not be leake
 
 ### Key Exchange
 Webcryptobox uses the Privacy Enhanced Mail (PEM) file format for key exchange. You can exchange public keys, private keys and encrypted private keys. Private keys can be exchanged between peers by using a derived passphrase, which is a 256 bit hex representation of derived bits. That passphrase is used as an input for a Password-Based Key Derivation Function 2 (PBKDF2) with 64000 iterations and SHA-256 hashing.
+
 
 ## API
 Webcryptobox provides functions to
