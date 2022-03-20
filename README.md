@@ -1,5 +1,5 @@
 # Webcryptobox
-WebCrypto compatible encryption libraries and CLIs.
+[WebCrypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) compatible encryption libraries and CLIs in various languages.
 
 ## Libraries
 * [Webcryptobox Rust](https://github.com/jo/webcryptobox-rs)
