@@ -19,7 +19,7 @@ Webcryptobox provides opinionated cipher selection and a few abstractions so you
 For understanding the way Webcryptobox works, best look at the [Webcryptobox Bash](https://github.com/jo/webcryptobox-sh) implementation. It basically wraps calls to `openssl` and massages data on its way in and out with `xxd`.
 
 ### Cipher
-We use Elliptic-curve Diffie–Hellman (ECDH) key agreement with curve P-521 aka secp521r1 or ansip521r1. Symmetric encryption is done with Advanced Encryption Standard (AES) with a key length of 256 bits in Cipher Block Chaining Mode (CBC).
+We use Elliptic-curve Diffie–Hellman (**ECDH**) key agreement with curve **P-521** aka secp521r1 or ansip521r1. Symmetric encryption is done with Advanced Encryption Standard (**AES**) with a key length of **256** bits in Cipher Block Chaining Mode (**CBC**), in short: `ECDH-P-521-AES-256-CBC`.
 
 ### Ciphertext & Initialization Vectors
 CBC uses initialisation vectors (iv) aka nonce, which should be randomly chosen. In contrary to other modes like Galois/Counter Mode (GCM), the iv is a) longer and b) does not leak the entire key in case of a nonce reusage.
