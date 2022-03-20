@@ -2,15 +2,15 @@
 WebCrypto compatible encryption libraries and CLIs.
 
 ## Libraries
-* webcryptobox-rs
-* webcryptobox-js
-* webcryptobox-sh
+* [Webcryptobox Rust](https://github.com/jo/webcryptobox-rs)
+* [Webcryptobox JavaScript](https://github.com/jo/webcryptobox-js)
+* [Webcryptobox Bash](https://github.com/jo/webcryptobox-sh)
 
 
 ## CLIs
-* wcb-rs
-* wcb-js
-* wcb-sh
+* [wcb Rust](https://github.com/jo/wcb-rs)
+* [wcb JavaScript](https://github.com/jo/wcb-js)
+* [wcb Bash](https://github.com/jo/wcb-sh)
 
 
 ## API
