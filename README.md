@@ -32,8 +32,6 @@ Webcryptobox generates ciphertexts which are composed of the iv plus the encrypt
 <16 bits iv><encrypted message bits>
 ```
 
-Ciphertext is Base64 encoded.
-
 ### Password Derivation
 For scenarios where you'd like to authenticate with a key pair against a webservice, Webcryptobox provides a password key derivation. Because we use a curve which provides enough derived material, we can generate both an AES key (256 bits long) plus a password, which can be maximal 256 bits long (in fact it could be a little longer, most of the time 264 bits, but we clip at 256 for simplicity).
 That means if an attacer would gain the password, the AES key would not be leaket.
